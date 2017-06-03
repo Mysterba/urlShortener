@@ -7,7 +7,7 @@ module.exports = function(app){
      
     // Main Routes
              
-    app.get('/', HomeController.Index);
+    app.get('', HomeController.Index);
     
     app.get('/:number', RedirectController.Redirect);
     
