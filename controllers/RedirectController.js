@@ -9,7 +9,7 @@ function search(shortUrlNumber, callback) {
     db.collection('shorturl').find({
 		short_url: { $eq: shortUrlNumber }
 	}).toArray(function (err, documents) {
-		if (err) return;
+		if (err) throw err
 		redirectUrl = documents;
 		callback();
 	});
@@ -18,11 +18,10 @@ function search(shortUrlNumber, callback) {
 exports.Redirect = function(request, response) {
     
     var shortUrlNumber = "https://boiling-brook-67511.herokuapp.com/"+request.url.substr(1);
-    
+    console.log(shortUrlNumber)
+
     search(shortUrlNumber, function () {
         response.redirect(redirectUrl[0].original_url);
-        response.end();
     });
     
-
-};
+};  
