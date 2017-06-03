@@ -1,11 +1,11 @@
 var MongoClient = require( 'mongodb' ).MongoClient;
-
+var connString = process.env.MONGOLAB_URI;
 var _db;
 
 module.exports = {
 
   connectToServer: function( callback ) {
-    MongoClient.connect( "mongodb://client:free4free@ds159371.mlab.com:59371/urlshort-db-201", function( err, db ) {
+    MongoClient.connect( connString, function( err, db ) {
       _db = db;
       return callback( err );
     } );
