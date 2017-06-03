@@ -1,9 +1,4 @@
 exports.Index = function(request, response){
-    response.title = 'Banana';
+    response.title = 'URL Shortener Microservice - By Dennis van Wattingen';
     response.render('home/Index', response);
-};
- 
-exports.About = function(request, response){
-    response.title = 'Apples';
-    response.render('home/About', response);
 };

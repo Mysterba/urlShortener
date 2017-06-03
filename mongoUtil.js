@@ -1,5 +1,5 @@
 var MongoClient = require( 'mongodb' ).MongoClient;
-var connString = process.env.MONGOLAB_URI;
+var connString = process.env.MONGOLAB_URI; //Config VAR in Heroku
 var _db;
 
 module.exports = {

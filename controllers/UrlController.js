@@ -1,6 +1,7 @@
 var url = require('url');
 var mongoUtil = require( '../mongoUtil' );
 var validUrl = require('valid-url');
+var hostURL = process.env.HOST_URL; //Config VAR in Heroku
 var number;
 
 function getNextSequenceValue(sequenceName, callback){
@@ -45,7 +46,7 @@ exports.Shorten_url = function(request, response) {
         else {
             //Generate the short url
             //Insert into DB
-            json = { original_url:url,short_url:"https://boiling-brook-67511.herokuapp.com/"+number };
+            json = { original_url:url,short_url:hostURL+number };
             
             insert(json, function () {
                 response.send(json);

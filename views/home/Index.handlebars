@@ -1,8 +1,19 @@
 
-<p>Welcome to the homepage of {{ title }}...</p>
+<h1> {{ title }}...</h1>
 
-<form action="/create" method="post" action="">
-    <label for="url">Enter url: </label>
-    <input id="url" type="text" name="url_field" value="http://address">
-    <input type="submit" value="OK">
-</form>
+<p>
+    Example creating a new short url:
+    <ul>
+        <li>https://boiling-brook-67511.herokuapp.com/shorten/https://www.google.com</li>
+        <li>https://boiling-brook-67511.herokuapp.com/shorten/http://foo.com:80</li>
+    </ul>
+    Example creation output:
+    <ul>
+        <li>{ "original_url":"http://foo.com:80", "short_url":"https://boiling-brook-67511.herokuapp.com/23" }</li>
+    </ul>
+    Example usage:
+    <ul>
+        <li>https://boiling-brook-67511.herokuapp.com/23</li>
+    </ul>
+</p>
+

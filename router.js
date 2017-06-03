@@ -12,7 +12,6 @@ module.exports = function(app){
     app.get('/:number', RedirectController.Redirect);
     
     app.get('/shorten/:url*', UrlController.Shorten_url);
-    
-    app.get('/about', HomeController.About);
+
  
 };
